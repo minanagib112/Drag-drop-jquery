@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./jQuery-P.js"></script>
+    <script src="./jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <img id="black-hole" src="images/pngwing.com.png" alt="Black Hole" />
+    </div>
+
+    <div id="draggable">
+        <img src="images/dd.png" alt="Drag Me!" />
+        <p>Drag me to the black hole!</p>
+    </div>
+
+    <script>
+        $(function () {
+            $("#draggable").draggable();
+
+            $("#black-hole").droppable({
+                drop: function (event, ui) {
+                    $("#draggable").hide();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
